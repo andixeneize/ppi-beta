@@ -7,7 +7,7 @@ import { useCurrencyConverter } from './hooks/useCurrencyConverter';
 import { currencies } from './data/currencies';
 
 function App() {
-  const [amount, setAmount] = useState('100');
+  const [amount, setAmount] = useState('1.00');
   const [from, setFrom] = useState('EUR');
   const [to, setTo] = useState('USD');
 

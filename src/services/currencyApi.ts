@@ -16,18 +16,6 @@ export const currencyApi = {
       throw error;
     }
   },
-
-  async getHistoricalRates(date: string, base: string = 'EUR'): Promise<CurrencyRate> {
-    try {
-      const response = await axios.get<CurrencyRate>(
-        `${API_BASE_URL}/rates?date=${date}&base=${base}`
-      );
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching historical rates:', error);
-      throw error;
-    }
-  },
 };
 
 

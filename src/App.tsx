@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AmountInput } from './components/AmountInput';
 import { CurrencySelect } from './components/CurrencySelect';
 import { SwapButton } from './components/SwapButton';
@@ -8,8 +8,8 @@ import { currencies } from './data/currencies';
 
 function App() {
   const [amount, setAmount] = useState('1.00');
-  const [from, setFrom] = useState('EUR');
-  const [to, setTo] = useState('USD');
+  const [from, setFrom] = useState('USD');
+  const [to, setTo] = useState('EUR');
 
   const { result, loading, error } = useCurrencyConverter(amount, from, to);
 

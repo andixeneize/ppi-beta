@@ -27,26 +27,26 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="bg-blue-900 text-white px-4 py-3">
+      <header className="bg-[#0E1342] text-white px-14 py-3">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-lg font-semibold">Currency exchange</h1>
+          <h1 className="text-[22px] font-semibold">Currency exchange</h1>
         </div>
       </header>
 
       {/* Main Title Section */}
       <div className="bg-blue-500 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-tight">
+          <h2 className="text-[32px] font-bold text-center leading-tight">
             {title}
           </h2>
         </div>
       </div>
 
       {/* Converter Card */}
-      <div className="max-w-6xl mx-auto px-4 -mt-8">
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
+      <div className="max-w-6xl mx-[77px] -mt-8">
+        <div className="bg-white rounded-lg shadow-lg pt-[32px] pl-[42px] pr-[18px] pb-[12px] h-[402px] flex flex-col relative">
           {/* Input Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end pr-[42px]">
             <div className="md:col-span-1">
               <AmountInput value={amount} onChange={setAmount} />
             </div>
@@ -81,3 +81,5 @@ function App() {
 
 export default App;
 
+// Se carga currency de manera estatica para evitar demoras en el select
+// ya que el listado de monedas no cambia frecuentemente

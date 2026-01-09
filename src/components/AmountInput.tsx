@@ -16,12 +16,12 @@ export const AmountInput: React.FC<AmountInputProps> = ({ value, onChange }) => 
 
   return (
     <div className="flex flex-col">
-      <label className="text-sm font-medium text-gray-700 mb-2">Amount</label>
+      <label className="text-[16px] font-semibold text-black mb-2">Amount</label>
       <input
         type="text"
         value={value}
         onChange={handleChange}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[16px] font-semibold text-black"
         placeholder="0.00"
       />
     </div>

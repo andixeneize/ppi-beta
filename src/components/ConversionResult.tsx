@@ -15,15 +15,33 @@ export const ConversionResult: React.FC<ConversionResultProps> = ({
 }) => {
   if (loading) {
     return (
-      <div className="mt-6 text-center">
-        <p className="text-gray-500">Loading exchange rate...</p>
-      </div>
+      <>
+        {/* Skeleton for conversion result */}
+        <div className="flex-1 flex items-center pl-[42px]">
+          <div className="space-y-2">
+            <div className="h-[32px] bg-gray-200 rounded w-48 animate-pulse"></div>
+            <div className="h-[32px] bg-gray-200 rounded w-64 animate-pulse"></div>
+            <div className="h-4 bg-gray-200 rounded w-56 animate-pulse mt-3"></div>
+          </div>
+        </div>
+        {/* Skeleton for disclaimer */}
+        <div className="absolute bottom-[12px] right-[18px] flex flex-col items-end">
+          <div className="bg-[#E8F3FF] rounded-[8px] pt-[14px] pr-[17px] pb-[14px] pl-[31px] w-[518px]">
+            <div className="space-y-2">
+              <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
+              <div className="h-4 bg-gray-200 rounded w-4/6 animate-pulse"></div>
+            </div>
+          </div>
+          <div className="h-4 bg-gray-200 rounded w-72 animate-pulse mt-3"></div>
+        </div>
+      </>
     );
   }
 
   if (error) {
     return (
-      <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+      <div className="mt-8 p-4 bg-red-50 border border-red-200 rounded-lg">
         <p className="text-red-600">{error}</p>
       </div>
     );
@@ -49,32 +67,36 @@ export const ConversionResult: React.FC<ConversionResultProps> = ({
   };
 
   return (
-    <div className="mt-8 space-y-4">
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-        <div className="flex-1">
-          <p className="text-lg text-gray-700">
-            <span className="font-semibold">{result.amount.toFixed(2)}</span>{' '}
-            {fromCurrency?.name} =
-          </p>
-          <p className="text-4xl md:text-5xl font-bold text-gray-900 mt-2">
+    <>
+      {/* Conversion Result Block */}
+      <div className="flex-1 flex items-center">
+        <div>
+          <p className="text-[32px] leading-[36px] font-semibold text-gray-900">
+            {result.amount.toFixed(2)} {fromCurrency?.name} =<br />
             {result.convertedAmount.toFixed(8)} {toCurrency?.name}
           </p>
-          <p className="text-sm text-gray-500 mt-3">
+          <p className="text-[16px] text-[#757575] mt-3">
             1 {result.to} = {result.inverseRate.toFixed(8)} {result.from}
           </p>
         </div>
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md">
-          <p className="text-sm text-blue-900 leading-relaxed">
+      </div>
+      
+      {/* Disclaimer Block */}
+      <div className="absolute bottom-[12px] right-[18px] flex flex-col items-end">
+        <div className="bg-[#E8F3FF] rounded-[8px] pt-[14px] pr-[17px] pb-[14px] pl-[31px] w-[518px]">
+          <p className="text-[14px] font-normal text-black ">
             We use the mid-market rate for our Converter. This is for informational purposes only.
             You won't receive this rate when sending money.
           </p>
         </div>
+        <p className="text-[12px] font-light text-black mt-3 text-right">
+          {fromCurrency?.name} to {toCurrency?.name} conversion — Last updated{' '}
+          {formatDate(result.date)}
+        </p>
       </div>
-      <p className="text-sm text-gray-500 mt-4">
-        {fromCurrency?.name} to {toCurrency?.name} conversion — Last updated{' '}
-        {formatDate(result.date)}
-      </p>
-    </div>
+    </>
   );
 };
 
+// Se decidio implementer un esqueleto en el loader para reservar el
+// espacio del bloque mientras carga y evitar un cambio de tamaño

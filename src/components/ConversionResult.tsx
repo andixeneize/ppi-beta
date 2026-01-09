@@ -17,15 +17,15 @@ export const ConversionResult: React.FC<ConversionResultProps> = ({
     return (
       <>
         {/* Skeleton for conversion result */}
-        <div className="flex-1 flex items-center pl-[42px]">
+        <div className="flex-1 flex items-center mt-6 md:mt-0">
           <div className="space-y-2">
-            <div className="h-[32px] bg-gray-200 rounded w-48 animate-pulse"></div>
-            <div className="h-[32px] bg-gray-200 rounded w-64 animate-pulse"></div>
+            <div className="h-[24px] md:h-[32px] bg-gray-200 rounded w-48 animate-pulse"></div>
+            <div className="h-[24px] md:h-[32px] bg-gray-200 rounded w-64 animate-pulse"></div>
             <div className="h-4 bg-gray-200 rounded w-56 animate-pulse mt-3"></div>
           </div>
         </div>
         {/* Skeleton for disclaimer */}
-        <div className="absolute bottom-[12px] right-[18px] flex flex-col items-end">
+        <div className="hidden md:flex md:absolute md:bottom-[12px] md:right-[18px] md:flex-col md:items-end">
           <div className="bg-[#E8F3FF] rounded-[8px] pt-[14px] pr-[17px] pb-[14px] pl-[31px] w-[518px]">
             <div className="space-y-2">
               <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
@@ -69,9 +69,9 @@ export const ConversionResult: React.FC<ConversionResultProps> = ({
   return (
     <>
       {/* Conversion Result Block */}
-      <div className="flex-1 flex items-center">
+      <div className="flex-1 flex items-center mt-6 md:mt-0">
         <div>
-          <p className="text-[32px] leading-[36px] font-semibold text-gray-900">
+          <p className="text-[24px] md:text-[32px] leading-[36px] font-semibold text-gray-900">
             {result.amount.toFixed(2)} {fromCurrency?.name} =<br />
             {result.convertedAmount.toFixed(8)} {toCurrency?.name}
           </p>
@@ -81,8 +81,8 @@ export const ConversionResult: React.FC<ConversionResultProps> = ({
         </div>
       </div>
       
-      {/* Disclaimer Block */}
-      <div className="absolute bottom-[12px] right-[18px] flex flex-col items-end">
+      {/* Disclaimer Block - Desktop only */}
+      <div className="hidden md:flex md:absolute md:bottom-[12px] md:right-[18px] md:flex-col md:items-end">
         <div className="bg-[#E8F3FF] rounded-[8px] pt-[14px] pr-[17px] pb-[14px] pl-[31px] w-[518px]">
           <p className="text-[14px] font-normal text-black ">
             We use the mid-market rate for our Converter. This is for informational purposes only.

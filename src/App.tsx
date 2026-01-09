@@ -39,7 +39,7 @@ function App() {
         <div className="absolute top-0 left-0 right-0 h-[295px] bg-blue-500"></div>
         
         {/* Title */}
-        <div className="relative px-4 pt-[32px] md:pt-[62px]">
+        <div className="relative px-8 pt-[32px] md:pt-[62px]">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-[32px] font-bold text-center leading-tight text-white">
               {title}

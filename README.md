@@ -1,5 +1,10 @@
-# ppi-beta
-Prototipo para ppi challenge
+# Currency Exchange Converter
+
+A currency exchange rate converter application that allows users to convert amounts between different currencies in real-time. 
+
+## API
+
+This project uses the [VATComply API](https://api.vatcomply.com) to fetch real-time currency exchange rates.
 
 ## Setup Instructions
 

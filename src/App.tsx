@@ -48,7 +48,7 @@ function App() {
         </div>
 
         {/* Converter Card  */}
-        <div className="relative max-w-6xl mx-8 md:mx-[77px] mt-[32px] md:mt-[62px]">
+        <div className="relative mx-8 md:mx-[77px] mt-[32px] md:mt-[62px]">
         <div className="bg-white rounded-lg shadow-lg px-4 py-6 md:pt-[32px] md:pl-[42px] md:pr-[18px] md:pb-[12px] min-h-[300px] md:h-[402px] flex flex-col relative">
           {/* Input Fields */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end md:pr-[42px]">
